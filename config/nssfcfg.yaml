@@ -1,0 +1,95 @@
+info:
+  version: 1.0.2
+  description: NSSF initial local configuration
+configuration:
+  nssfName: NSSF
+  sbi:
+    scheme: http
+    registerIPv4: nssf.free5gc.org
+    bindingIPv4: nssf.free5gc.org
+    port: 8000
+    tls:
+      pem: cert/nssf.pem
+      key: cert/nssf.key
+  serviceNameList:
+    - nnssf-nsselection
+    - nnssf-nssaiavailability
+  nrfUri: http://nrf.free5gc.org:8000
+  nrfCertPem: cert/nrf.pem
+  supportedPlmnList:
+    - mcc: 208
+      mnc: 93
+  supportedNssaiInPlmnList:
+    - plmnId:
+        mcc: 208
+        mnc: 93
+      supportedSnssaiList:
+        - sst: 1
+          sd: 010203
+        - sst: 1
+          sd: 112233
+        - sst: 1
+          sd: 000003
+        - sst: 2
+          sd: 000001
+        - sst: 2
+          sd: 000002
+        - sst: 1
+          sd: 000001
+  nsiList:
+    - snssai:
+        sst: 1
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 10
+    - snssai:
+        sst: 1
+        sd: 000001
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 11
+    - snssai:
+        sst: 1
+        sd: 000002
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 12
+    - snssai:
+        sst: 1
+        sd: 000003
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 13
+    - snssai:
+        sst: 2
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 20
+    - snssai:
+        sst: 2
+        sd: 000001
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 21
+    - snssai:
+        sst: 1
+        sd: 010203
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 22
+    - snssai:
+        sst: 1
+        sd: 112233
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 23
+    - snssai:
+        sst: 1
+        sd: 000001
+      nsiInformationList:
+        - nrfId: http://nrf.free5gc.org:8000/nnrf-nfm/v1/nf-instances
+          nsiId: 24
+logger:
+  enable: true
+  level: info
+  reportCaller: false
