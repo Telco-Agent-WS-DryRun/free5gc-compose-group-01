@@ -132,6 +132,8 @@ services:
       - ./cert:/free5gc/cert
     environment:
       GIN_MODE: release
+    extra_hosts:
+      - "upf2.free5gc.org:172.31.1.94"
     networks:
       privnet:
         aliases:
